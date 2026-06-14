@@ -560,6 +560,65 @@
     line-height: 1.5;
   }
 
+  /* === PROBLEMS === */
+  .problems-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
+  .problem-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: 1.5rem;
+    transition: transform 0.35s var(--ease-smooth), border-color 0.35s var(--ease-smooth);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  .problem-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: radial-gradient(500px circle at var(--spot-x, 50%) var(--spot-y, 50%), color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.4s;
+    pointer-events: none;
+    mix-blend-mode: var(--spotlight-blend);
+  }
+  .problem-card:hover::before { opacity: 1; }
+  .problem-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
+  }
+  .problem-question {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-fg);
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1;
+    min-height: 2.8em;
+  }
+  .problem-arrow {
+    font-size: 1rem;
+    color: var(--color-accent);
+    margin: 0.35rem 0;
+    position: relative;
+    z-index: 1;
+  }
+  .problem-answer {
+    font-size: 0.85rem;
+    color: var(--color-fg-dim);
+    line-height: 1.5;
+    position: relative;
+    z-index: 1;
+    flex: 1;
+  }
+
   /* === TARIFFS — CAROUSEL === */
   .tariffs-carousel {
     display: flex;
@@ -900,6 +959,10 @@
       grid-template-columns: 1fr;
     }
 
+    .problems-grid {
+      grid-template-columns: 1fr;
+    }
+
     .tariffs-carousel .tariff-card {
       flex: 0 0 85%;
       min-width: 280px;
@@ -1020,6 +1083,43 @@
         <a href="https://t.me/твой_юзернейм" class="btn btn-secondary" target="_blank">
           Написать в Telegram ✦
         </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Problems -->
+<section class="section" id="problems">
+  <div class="container">
+    <span class="section-label reveal">Знакомо?</span>
+    <h2 class="section-title reveal" style="transition-delay:50ms">Я знаю, с чем ты сталкиваешься</h2>
+    <p class="section-subtitle reveal" style="transition-delay:100ms">Бывает полная безнадёга? Я знаю как из неё выходить</p>
+
+    <div class="problems-grid">
+      <div class="problem-card reveal" style="transition-delay:100ms">
+        <div class="problem-question">❓ «В химии полный ноль — даже пробник написать не могу»</div>
+        <div class="problem-arrow">→</div>
+        <div class="problem-answer">Вытянем с любого уровня. Начнём с самых основ и дойдём до результата. Я сам начинал с нуля.</div>
+      </div>
+      <div class="problem-card reveal" style="transition-delay:150ms">
+        <div class="problem-question">❓ «Пробники на 20–30 баллов, кажется это потолок»</div>
+        <div class="problem-arrow">→</div>
+        <div class="problem-answer">Это не потолок. Разберём каждую ошибку, закроем пробелы, которые тянут вниз. Баллы пойдут вверх.</div>
+      </div>
+      <div class="problem-card reveal" style="transition-delay:200ms">
+        <div class="problem-question">❓ «Органика и вторая часть — для меня тёмный лес»</div>
+        <div class="problem-arrow">→</div>
+        <div class="problem-answer">Разложим на элементарные шаги. Цепочки и задачи на растворы станут понятной логикой без страха.</div>
+      </div>
+      <div class="problem-card reveal" style="transition-delay:250ms">
+        <div class="problem-question">❓ «До экзамена почти ничего, а я ничего не знаю»</div>
+        <div class="problem-arrow">→</div>
+        <div class="problem-answer">Фокус только на темах, которые принесут баллы. Без воды. Полгода хватило мне — хватит и тебе.</div>
+      </div>
+      <div class="problem-card reveal" style="transition-delay:300ms">
+        <div class="problem-question">❓ «Опускаются руки, не знаю с чего начать»</div>
+        <div class="problem-arrow">→</div>
+        <div class="problem-answer">Бесплатное пробное 45 мин — определим уровень и составим план. А дальше я веду тебя 24/7 до результата.</div>
       </div>
     </div>
   </div>
@@ -1362,7 +1462,7 @@
 
   /* ======================== SPOTLIGHT ======================== */
   (function initSpotlight() {
-    var cards = document.querySelectorAll('.tariff-card, .about-value-card');
+    var cards = document.querySelectorAll('.tariff-card, .about-value-card, .problem-card');
     cards.forEach(function(card) {
       card.addEventListener('mousemove', function(e) {
         var rect = card.getBoundingClientRect();
