@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
-<title>Химия без духоты — подготовка к ЕГЭ/ОГЭ по химии</title>
-<meta name="description" content="Подготовка к ЕГЭ и ОГЭ по химии от студента-медика. Сдал ЕГЭ на 75 баллов с нуля за 2 месяца. Индивидуальные занятия, понятные схемы и лайфхаки.">
+<title>IlyaBR — подготовка к ЕГЭ/ОГЭ по химии</title>
+<meta name="description" content="Подготовка к ЕГЭ и ОГЭ по химии от студента-медика. Сообщество, гайды и индивидуальные занятия.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300..900&family=JetBrains+Mono:wght@400..800&display=swap" rel="stylesheet">
@@ -12,14 +12,11 @@
   :root {
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, monospace;
-
     --radius-sm: 0.375rem;
     --radius-md: 0.75rem;
     --radius-lg: 1.25rem;
-
     --shadow-card: 0 14px 36px -16px rgba(0,0,0,0.55), 0 0 0 1px rgba(255,245,155,0.04);
     --shadow-card-hover: 0 20px 48px -20px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,245,155,0.12);
-
     --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
     --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
   }
@@ -36,7 +33,6 @@
     --color-fg: #f3edf7;
     --color-fg-dim: #7c80b4;
     --color-on-accent: #0e0e43;
-
     --blob-1-opacity: 0.2;
     --blob-2-opacity: 0.16;
     --blob-3-opacity: 0.14;
@@ -56,7 +52,6 @@
     --color-fg: #2d3180;
     --color-fg-dim: #4b55c8;
     --color-on-accent: #fff;
-
     --blob-1-opacity: 0.10;
     --blob-2-opacity: 0.08;
     --blob-3-opacity: 0.07;
@@ -65,7 +60,6 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
   html { scroll-behavior: smooth; }
 
   body {
@@ -80,9 +74,7 @@
 
   /* === FILM GRAIN === */
   .film-grain {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
+    position: fixed; inset: 0; z-index: 1;
     pointer-events: none;
     opacity: var(--grain-opacity);
     mix-blend-mode: overlay;
@@ -91,124 +83,65 @@
 
   /* === AMBIENT BLOBS === */
   .ambient-blobs {
-    position: fixed;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    overflow: hidden;
+    position: fixed; inset: 0; z-index: 0;
+    pointer-events: none; overflow: hidden;
   }
   .ambient-blob {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(80px);
-    pointer-events: none;
+    position: absolute; border-radius: 50%;
+    filter: blur(80px); pointer-events: none;
   }
-  .ambient-blob--1 {
-    width: 30rem; height: 30rem;
-    top: -8rem; left: -6rem;
-    background: var(--color-accent);
-    opacity: var(--blob-1-opacity);
-  }
-  .ambient-blob--2 {
-    width: 26rem; height: 26rem;
-    top: 40%; right: -8rem;
-    background: var(--color-accent-2);
-    opacity: var(--blob-2-opacity);
-  }
-  .ambient-blob--3 {
-    width: 28rem; height: 28rem;
-    bottom: -6rem; left: 30%;
-    background: var(--color-accent-3);
-    opacity: var(--blob-3-opacity);
-  }
+  .ambient-blob--1 { width: 30rem; height: 30rem; top: -8rem; left: -6rem; background: var(--color-accent); opacity: var(--blob-1-opacity); }
+  .ambient-blob--2 { width: 26rem; height: 26rem; top: 40%; right: -8rem; background: var(--color-accent-2); opacity: var(--blob-2-opacity); }
+  .ambient-blob--3 { width: 28rem; height: 28rem; bottom: -6rem; left: 30%; background: var(--color-accent-3); opacity: var(--blob-3-opacity); }
 
   /* === CANVAS === */
-  #plexus-canvas {
-    position: fixed;
-    inset: 0;
-    z-index: 1;
-    pointer-events: none;
-  }
+  #plexus-canvas { position: fixed; inset: 0; z-index: 1; pointer-events: none; }
 
   /* === UTILITY === */
-  .container {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1.5rem;
-  }
-
-  .section {
-    position: relative;
-    z-index: 2;
-    padding: 5rem 0;
-  }
+  .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+  .section { position: relative; z-index: 2; padding: 5rem 0; }
 
   .section-label {
-    display: inline-block;
-    font-family: var(--font-mono);
-    font-size: 0.75rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--color-accent);
-    margin-bottom: 0.75rem;
-    opacity: 0.7;
+    display: inline-block; font-family: var(--font-mono);
+    font-size: 0.75rem; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--color-accent);
+    margin-bottom: 0.75rem; opacity: 0.7;
   }
 
   .section-title {
-    font-size: clamp(1.75rem, 4vw, 2.5rem);
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-    position: relative;
+    font-size: clamp(1.75rem, 4vw, 2.5rem); font-weight: 700;
+    line-height: 1.2; margin-bottom: 0.5rem;
   }
   .section-title::after {
-    content: '';
-    display: block;
-    width: 3rem;
-    height: 2px;
+    content: ''; display: block; width: 3rem; height: 2px;
     margin-top: 0.75rem;
     background: linear-gradient(90deg, var(--color-accent), var(--color-accent-2));
     border-radius: 1px;
   }
 
   .section-subtitle {
-    font-size: 1.05rem;
-    color: var(--color-fg-dim);
-    margin-bottom: 3rem;
-    max-width: 36rem;
+    font-size: 1.05rem; color: var(--color-fg-dim);
+    margin-bottom: 3rem; max-width: 36rem;
   }
 
   .text-accent { color: var(--color-accent); }
 
   .btn-group {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
+    display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem;
   }
 
   .btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
+    display: inline-flex; align-items: center; gap: 0.5rem;
     padding: 0.75rem 1.75rem;
-    font-family: var(--font-sans);
-    font-size: 0.95rem;
-    font-weight: 600;
-    border-radius: var(--radius-md);
-    text-decoration: none;
-    cursor: pointer;
-    border: none;
+    font-family: var(--font-sans); font-size: 0.95rem;
+    font-weight: 600; border-radius: var(--radius-md);
+    text-decoration: none; cursor: pointer; border: none;
     transition: all 0.35s var(--ease-smooth);
-    position: relative;
-    overflow: hidden;
+    position: relative; overflow: hidden;
   }
 
   .btn-primary {
-    background: var(--color-accent);
-    color: var(--color-on-accent);
+    background: var(--color-accent); color: var(--color-on-accent);
     box-shadow: 0 8px 28px -6px color-mix(in srgb, var(--color-accent) 40%, transparent);
   }
   .btn-primary:hover {
@@ -217,37 +150,35 @@
   }
 
   .btn-secondary {
-    background: var(--color-surface-2);
-    color: var(--color-fg);
+    background: var(--color-surface-2); color: var(--color-fg);
     border: 1px solid var(--color-border);
     backdrop-filter: blur(8px);
   }
   .btn-secondary:hover {
-    background: var(--color-surface);
-    border-color: var(--color-accent);
+    background: var(--color-surface); border-color: var(--color-accent);
+    transform: translateY(-2px);
+  }
+
+  .btn-outline {
+    background: transparent; color: var(--color-accent);
+    border: 1.5px solid var(--color-accent);
+  }
+  .btn-outline:hover {
+    background: color-mix(in srgb, var(--color-accent) 10%, transparent);
     transform: translateY(-2px);
   }
 
   /* === REVEAL === */
   .reveal {
-    opacity: 0;
-    filter: blur(4px);
+    opacity: 0; filter: blur(4px);
     transform: translateY(0.85rem);
     transition: opacity 0.75s var(--ease-out-expo), filter 0.75s var(--ease-out-expo), transform 0.75s var(--ease-out-expo);
   }
-  .reveal.reveal-visible {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateY(0);
-  }
+  .reveal.reveal-visible { opacity: 1; filter: blur(0); transform: translateY(0); }
 
   /* === HEADER === */
   .site-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 100;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     backdrop-filter: blur(20px) saturate(1.25);
     -webkit-backdrop-filter: blur(20px) saturate(1.25);
     background: color-mix(in srgb, var(--color-void-deep) 70%, transparent);
@@ -255,337 +186,137 @@
     transition: background 0.3s, border-color 0.3s;
   }
   .site-header .container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 3.75rem;
+    display: flex; align-items: center;
+    justify-content: space-between; height: 3.75rem;
   }
 
   .site-logo {
-    font-size: 1.1rem;
-    font-weight: 700;
-    text-decoration: none;
-    color: var(--color-fg);
-    letter-spacing: -0.02em;
-    white-space: nowrap;
+    font-size: 1.1rem; font-weight: 700; text-decoration: none;
+    color: var(--color-fg); letter-spacing: -0.02em; white-space: nowrap;
   }
   .site-logo span { color: var(--color-accent); }
 
-  .nav-desktop {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-  }
+  .nav-desktop { display: flex; align-items: center; gap: 1.5rem; }
   .nav-desktop a {
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var(--color-fg-dim);
-    text-decoration: none;
-    transition: color 0.2s;
+    font-size: 0.875rem; font-weight: 500;
+    color: var(--color-fg-dim); text-decoration: none; transition: color 0.2s;
   }
   .nav-desktop a:hover { color: var(--color-accent); }
 
-  .header-actions {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
+  .header-actions { display: flex; align-items: center; gap: 0.75rem; }
 
   .theme-toggle {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: var(--radius-sm);
-    background: var(--color-surface-2);
-    border: 1px solid var(--color-border);
-    cursor: pointer;
-    font-size: 1rem;
-    transition: all 0.2s;
-    color: var(--color-fg);
+    display: flex; align-items: center; justify-content: center;
+    width: 2.25rem; height: 2.25rem; border-radius: var(--radius-sm);
+    background: var(--color-surface-2); border: 1px solid var(--color-border);
+    cursor: pointer; font-size: 1rem; transition: all 0.2s; color: var(--color-fg);
   }
-  .theme-toggle:hover {
-    border-color: var(--color-accent);
-    background: var(--color-surface);
-  }
+  .theme-toggle:hover { border-color: var(--color-accent); background: var(--color-surface); }
 
   .nav-toggle {
-    display: none;
-    align-items: center;
-    justify-content: center;
-    width: 2.25rem;
-    height: 2.25rem;
-    border-radius: var(--radius-sm);
-    background: var(--color-surface-2);
-    border: 1px solid var(--color-border);
-    cursor: pointer;
-    color: var(--color-fg);
-    font-size: 1.25rem;
+    display: none; align-items: center; justify-content: center;
+    width: 2.25rem; height: 2.25rem; border-radius: var(--radius-sm);
+    background: var(--color-surface-2); border: 1px solid var(--color-border);
+    cursor: pointer; color: var(--color-fg); font-size: 1.25rem;
   }
 
   .mobile-nav {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 99;
+    display: none; position: fixed; inset: 0; z-index: 99;
     background: color-mix(in srgb, var(--color-void-deep) 96%, transparent);
-    backdrop-filter: blur(30px);
-    -webkit-backdrop-filter: blur(30px);
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 1.5rem;
+    backdrop-filter: blur(30px); flex-direction: column;
+    align-items: center; justify-content: center; gap: 1.5rem;
   }
   .mobile-nav.open { display: flex; }
   .mobile-nav a {
-    font-size: 1.25rem;
-    font-weight: 600;
-    color: var(--color-fg-dim);
-    text-decoration: none;
-    transition: color 0.2s;
+    font-size: 1.25rem; font-weight: 600;
+    color: var(--color-fg-dim); text-decoration: none; transition: color 0.2s;
   }
   .mobile-nav a:hover { color: var(--color-accent); }
 
   /* === HERO === */
   .hero {
-    position: relative;
-    z-index: 2;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
+    position: relative; z-index: 2;
+    min-height: 100vh; display: flex; align-items: center;
     padding: 6rem 0 4rem;
   }
   .hero-content { max-width: 48rem; }
 
   .hero-tagline {
-    font-family: var(--font-mono);
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    color: var(--color-accent);
-    margin-bottom: 1rem;
+    font-family: var(--font-mono); font-size: 0.85rem;
+    font-weight: 500; letter-spacing: 0.05em;
+    color: var(--color-accent); margin-bottom: 1rem;
   }
 
   .hero h1 {
     font-size: clamp(2rem, 5.5vw, 3.75rem);
-    font-weight: 800;
-    line-height: 1.1;
-    letter-spacing: -0.03em;
-    margin-bottom: 1.25rem;
+    font-weight: 800; line-height: 1.1;
+    letter-spacing: -0.03em; margin-bottom: 1.25rem;
   }
   .hero h1 .highlight {
     background: linear-gradient(135deg, var(--color-accent), var(--color-accent-2), var(--color-accent-3));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
     background-clip: text;
   }
 
   .hero p {
-    font-size: 1.1rem;
-    line-height: 1.7;
-    color: var(--color-fg-dim);
-    max-width: 36rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.1rem; line-height: 1.7;
+    color: var(--color-fg-dim); max-width: 36rem; margin-bottom: 0.5rem;
   }
 
-  /* === ABOUT === */
-  .about-grid {
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    gap: 3rem;
-    align-items: start;
-  }
-  .about-avatar {
-    width: 100%;
-    max-width: 14rem;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-3));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 3.5rem;
-    color: var(--color-on-accent);
-    font-weight: 700;
-    margin: 0 auto;
-    position: relative;
-    overflow: hidden;
-  }
-  .about-avatar::after {
-    content: '';
-    position: absolute;
-    inset: 3px;
-    border-radius: 50%;
-    background: var(--color-void-deep);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .about-avatar-inner {
-    position: relative;
-    z-index: 1;
-    font-size: 2.5rem;
-    font-weight: 800;
-    color: var(--color-accent);
-  }
-  .about-text h3 {
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
-  }
-  .about-text p {
-    color: var(--color-fg-dim);
-    margin-bottom: 1rem;
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-  .about-text strong { color: var(--color-fg); }
-  .about-stats {
-    display: flex;
-    gap: 2rem;
-    margin-top: 1.5rem;
-    flex-wrap: wrap;
-  }
-  .about-stat {
-    text-align: center;
-  }
-  .about-stat-value {
-    font-family: var(--font-mono);
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: var(--color-accent);
-    line-height: 1;
-  }
-  .about-stat-label {
-    font-size: 0.8rem;
-    color: var(--color-fg-dim);
-    margin-top: 0.25rem;
-  }
-
-  /* === ABOUT VALUES & BENEFITS === */
-  .about-values-grid {
+  /* === AUDIENCE === */
+  .audience-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-    margin-top: 1.5rem;
+    gap: 1.5rem;
+    margin-top: 1rem;
   }
-  .about-value-card {
+  .audience-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 1.25rem;
-    transition: transform 0.3s var(--ease-smooth), border-color 0.3s;
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    transition: transform 0.35s var(--ease-smooth), border-color 0.35s var(--ease-smooth);
     position: relative;
     overflow: hidden;
   }
-  .about-value-card:hover {
-    transform: translateY(-2px);
-    border-color: color-mix(in srgb, var(--color-accent) 30%, var(--color-border));
-  }
-  .about-value-card::before {
+  .audience-card::before {
     content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
-    background: radial-gradient(400px circle at var(--spot-x, 50%) var(--spot-y, 50%), color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.4s;
-    pointer-events: none;
+    position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(500px circle at var(--spot-x, 50%) var(--spot-y, 50%), color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 60%);
+    opacity: 0; transition: opacity 0.4s; pointer-events: none;
     mix-blend-mode: var(--spotlight-blend);
   }
-  .about-value-card:hover::before { opacity: 1; }
-  .about-value-num {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 1.75rem;
-    height: 1.75rem;
-    border-radius: 50%;
-    background: color-mix(in srgb, var(--color-accent) 14%, transparent);
-    color: var(--color-accent);
-    font-family: var(--font-mono);
-    font-size: 0.8rem;
-    font-weight: 700;
-    margin-bottom: 0.75rem;
-    position: relative;
-    z-index: 1;
+  .audience-card:hover::before { opacity: 1; }
+  .audience-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
   }
-  .about-value-card h4 {
-    font-size: 0.95rem;
-    font-weight: 600;
-    margin-bottom: 0.35rem;
-    line-height: 1.3;
-    position: relative;
-    z-index: 1;
+  .audience-emoji {
+    font-size: 1.5rem; margin-bottom: 0.75rem; position: relative; z-index: 1;
   }
-  .about-value-card p {
-    font-size: 0.85rem;
-    color: var(--color-fg-dim);
-    line-height: 1.55;
-    position: relative;
-    z-index: 1;
+  .audience-card h3 {
+    font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; position: relative; z-index: 1;
   }
-
-  .about-benefits-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
-    margin-top: 1.5rem;
-  }
-  .about-benefit-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-md);
-    padding: 1.25rem;
-    text-align: center;
-    transition: transform 0.3s var(--ease-smooth), border-color 0.3s;
-  }
-  .about-benefit-card:hover {
-    transform: translateY(-2px);
-    border-color: color-mix(in srgb, var(--color-accent-2) 30%, var(--color-border));
-  }
-  .about-benefit-icon {
-    font-size: 1.5rem;
-    margin-bottom: 0.5rem;
-  }
-  .about-benefit-card h4 {
-    font-size: 0.9rem;
-    font-weight: 600;
-    margin-bottom: 0.35rem;
-  }
-  .about-benefit-card p {
-    font-size: 0.8rem;
-    color: var(--color-fg-dim);
-    line-height: 1.5;
+  .audience-card p {
+    font-size: 0.9rem; color: var(--color-fg-dim); line-height: 1.6; position: relative; z-index: 1;
   }
 
   /* === PROBLEMS === */
   .problems-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 1rem;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem;
   }
   .problem-card {
     background: var(--color-surface);
     border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
+    border-radius: var(--radius-lg); padding: 1.5rem;
     transition: transform 0.35s var(--ease-smooth), border-color 0.35s var(--ease-smooth);
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+    position: relative; overflow: hidden; display: flex; flex-direction: column;
   }
   .problem-card::before {
     content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
+    position: absolute; inset: 0; border-radius: inherit;
     background: radial-gradient(500px circle at var(--spot-x, 50%) var(--spot-y, 50%), color-mix(in srgb, var(--color-accent) 14%, transparent), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.4s;
-    pointer-events: none;
+    opacity: 0; transition: opacity 0.4s; pointer-events: none;
     mix-blend-mode: var(--spotlight-blend);
   }
   .problem-card:hover::before { opacity: 1; }
@@ -594,197 +325,137 @@
     border-color: color-mix(in srgb, var(--color-accent) 35%, var(--color-border));
   }
   .problem-question {
-    font-size: 0.9rem;
-    font-weight: 600;
-    color: var(--color-fg);
-    line-height: 1.4;
-    margin-bottom: 0.5rem;
-    position: relative;
-    z-index: 1;
-    min-height: 2.8em;
+    font-size: 0.9rem; font-weight: 600; color: var(--color-fg);
+    line-height: 1.4; margin-bottom: 0.5rem;
+    position: relative; z-index: 1; min-height: 2.8em;
   }
-  .problem-arrow {
-    font-size: 1rem;
-    color: var(--color-accent);
-    margin: 0.35rem 0;
-    position: relative;
-    z-index: 1;
-  }
+  .problem-arrow { font-size: 1rem; color: var(--color-accent); margin: 0.35rem 0; position: relative; z-index: 1; }
   .problem-answer {
-    font-size: 0.85rem;
-    color: var(--color-fg-dim);
-    line-height: 1.5;
-    position: relative;
-    z-index: 1;
-    flex: 1;
+    font-size: 0.85rem; color: var(--color-fg-dim);
+    line-height: 1.5; position: relative; z-index: 1; flex: 1;
   }
 
-  /* === TARIFFS — CAROUSEL === */
+  /* === COMMUNITY === */
+  .community-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem;
+  }
+  .community-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg); padding: 2rem;
+    transition: transform 0.35s var(--ease-smooth), border-color 0.35s var(--ease-smooth);
+  }
+  .community-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--color-accent-2) 35%, var(--color-border));
+  }
+  .community-icon { font-size: 2rem; margin-bottom: 1rem; }
+  .community-card h4 {
+    font-size: 1.05rem; font-weight: 600; margin-bottom: 0.75rem;
+  }
+  .community-card ul { list-style: none; }
+  .community-card li {
+    font-size: 0.85rem; color: var(--color-fg-dim);
+    padding: 0.35rem 0; display: flex; align-items: flex-start; gap: 0.4rem;
+  }
+  .community-card li::before { content: '→'; color: var(--color-accent); font-weight: 600; flex-shrink: 0; }
+
+  .community-cta {
+    margin-top: 2rem; text-align: center;
+  }
+  .community-cta p {
+    color: var(--color-fg-dim); margin-bottom: 1rem; font-size: 0.95rem;
+  }
+
+  /* === ABOUT === */
+  .about-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 3rem; align-items: start; }
+  .about-avatar {
+    width: 100%; max-width: 14rem; aspect-ratio: 1; border-radius: 50%;
+    background: linear-gradient(135deg, var(--color-accent), var(--color-accent-3));
+    display: flex; align-items: center; justify-content: center;
+    margin: 0 auto; position: relative; overflow: hidden;
+  }
+  .about-avatar::after {
+    content: ''; position: absolute; inset: 3px; border-radius: 50%;
+    background: var(--color-void-deep);
+  }
+  .about-avatar-inner { position: relative; z-index: 1; font-size: 2.5rem; font-weight: 800; color: var(--color-accent); }
+  .about-text h3 { font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem; }
+  .about-text p { color: var(--color-fg-dim); margin-bottom: 1rem; font-size: 1rem; line-height: 1.7; }
+  .about-text strong { color: var(--color-fg); }
+
+  .about-values-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+  .about-value-card {
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-radius: var(--radius-md); padding: 1.25rem;
+    transition: transform 0.3s var(--ease-smooth), border-color 0.3s;
+    position: relative; overflow: hidden;
+  }
+  .about-value-card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--color-accent) 30%, var(--color-border)); }
+  .about-value-card::before {
+    content: ''; position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(400px circle at var(--spot-x, 50%) var(--spot-y, 50%), color-mix(in srgb, var(--color-accent) 12%, transparent), transparent 60%);
+    opacity: 0; transition: opacity 0.4s; pointer-events: none;
+    mix-blend-mode: var(--spotlight-blend);
+  }
+  .about-value-card:hover::before { opacity: 1; }
+  .about-value-num {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 1.75rem; height: 1.75rem; border-radius: 50%;
+    background: color-mix(in srgb, var(--color-accent) 14%, transparent);
+    color: var(--color-accent); font-family: var(--font-mono);
+    font-size: 0.8rem; font-weight: 700; margin-bottom: 0.75rem;
+    position: relative; z-index: 1;
+  }
+  .about-value-card h4 {
+    font-size: 0.95rem; font-weight: 600; margin-bottom: 0.35rem;
+    line-height: 1.3; position: relative; z-index: 1;
+  }
+  .about-value-card p {
+    font-size: 0.85rem; color: var(--color-fg-dim);
+    line-height: 1.55; position: relative; z-index: 1;
+  }
+
+  .about-benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1.5rem; }
+  .about-benefit-card {
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-radius: var(--radius-md); padding: 1.25rem; text-align: center;
+    transition: transform 0.3s var(--ease-smooth), border-color 0.3s;
+  }
+  .about-benefit-card:hover { transform: translateY(-2px); border-color: color-mix(in srgb, var(--color-accent-2) 30%, var(--color-border)); }
+  .about-benefit-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+  .about-benefit-card h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.35rem; }
+  .about-benefit-card p { font-size: 0.8rem; color: var(--color-fg-dim); line-height: 1.5; }
+
+  /* === TARIFF CAROUSEL === */
   .tariffs-carousel {
-    display: flex;
-    gap: 1.25rem;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    -webkit-overflow-scrolling: touch;
-    padding-bottom: 0.75rem;
-    scrollbar-width: none;
+    display: flex; gap: 1.25rem; overflow-x: auto;
+    scroll-snap-type: x mandatory; -webkit-overflow-scrolling: touch;
+    padding-bottom: 0.75rem; scrollbar-width: none;
   }
   .tariffs-carousel::-webkit-scrollbar { display: none; }
-
   .tariffs-carousel .tariff-card {
-    flex: 0 0 calc(50% - 0.625rem);
-    min-width: 320px;
-    scroll-snap-align: start;
+    flex: 0 0 calc(50% - 0.625rem); min-width: 320px; scroll-snap-align: start;
   }
 
   .tariff-card {
-    position: relative;
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 2rem;
+    position: relative; background: var(--color-surface);
+    border: 1px solid var(--color-border); border-radius: var(--radius-lg);
+    padding: 2rem; display: flex; flex-direction: column;
     transition: transform 0.35s var(--ease-smooth), border-color 0.35s var(--ease-smooth), box-shadow 0.35s var(--ease-smooth);
-    display: flex;
-    flex-direction: column;
     overflow: hidden;
   }
-
-  .tariff-card--compact .tariff-price {
-    font-size: 1.5rem;
-  }
-  .tariff-card--compact .tariff-price + .tariff-price {
-    margin-top: 0.25rem;
-  }
-
-  .carousel-nav {
-    display: flex;
-    gap: 0.75rem;
-    justify-content: center;
-    margin-top: 1.25rem;
-  }
-  .carousel-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 2.75rem;
-    height: 2.75rem;
-    border-radius: 50%;
-    background: var(--color-surface);
-    border: 1.5px solid var(--color-border);
-    color: var(--color-fg);
-    cursor: pointer;
-    font-size: 1.25rem;
-    transition: all 0.2s;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-  }
-  .carousel-btn:hover {
-    background: var(--color-surface-2);
-    border-color: var(--color-accent);
-    color: var(--color-accent);
-    transform: scale(1.05);
-  }
   .tariff-card::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    border-radius: inherit;
+    content: ''; position: absolute; inset: 0; border-radius: inherit;
     background: radial-gradient(600px circle at var(--spot-x, 50%) var(--spot-y, 50%), color-mix(in srgb, var(--color-accent) 18%, transparent), transparent 60%);
-    opacity: 0;
-    transition: opacity 0.4s;
-    pointer-events: none;
+    opacity: 0; transition: opacity 0.4s; pointer-events: none;
     mix-blend-mode: var(--spotlight-blend);
   }
   .tariff-card:hover::before { opacity: 1; }
-
   .tariff-card:hover {
     transform: translateY(-3px);
     border-color: color-mix(in srgb, var(--color-accent) 40%, var(--color-border));
     box-shadow: var(--shadow-card-hover);
-  }
-
-  .tariff-badge {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    font-family: var(--font-mono);
-    font-size: 0.7rem;
-    font-weight: 600;
-    padding: 0.25rem 0.6rem;
-    border-radius: 100px;
-    background: color-mix(in srgb, var(--color-accent) 15%, transparent);
-    color: var(--color-accent);
-    border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
-  }
-  .tariff-badge--hot {
-    background: color-mix(in srgb, #ff6b6b 15%, transparent);
-    color: #ff6b6b;
-    border-color: color-mix(in srgb, #ff6b6b 25%, transparent);
-  }
-  .tariff-badge--summer {
-    background: color-mix(in srgb, var(--color-accent-2) 15%, transparent);
-    color: var(--color-accent-2);
-    border-color: color-mix(in srgb, var(--color-accent-2) 25%, transparent);
-  }
-
-  .tariff-card-header {
-    margin-bottom: 1.25rem;
-    position: relative;
-    z-index: 1;
-  }
-  .tariff-name {
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 0.25rem;
-  }
-  .tariff-desc {
-    font-size: 0.85rem;
-    color: var(--color-fg-dim);
-  }
-
-  .tariff-price {
-    font-family: var(--font-mono);
-    font-size: 2rem;
-    font-weight: 700;
-    color: var(--color-accent);
-    margin-bottom: 0.25rem;
-    position: relative;
-    z-index: 1;
-  }
-  .tariff-price-sub {
-    font-size: 0.8rem;
-    color: var(--color-fg-dim);
-    font-family: var(--font-sans);
-    font-weight: 400;
-  }
-
-  .tariff-features {
-    list-style: none;
-    margin: 1.25rem 0;
-    flex: 1;
-    position: relative;
-    z-index: 1;
-  }
-  .tariff-features li {
-    font-size: 0.9rem;
-    padding: 0.4rem 0;
-    color: var(--color-fg-dim);
-    display: flex;
-    align-items: flex-start;
-    gap: 0.5rem;
-  }
-  .tariff-features li::before {
-    content: '→';
-    color: var(--color-accent);
-    font-weight: 600;
-    flex-shrink: 0;
-  }
-
-  .tariff-card .btn {
-    position: relative;
-    z-index: 1;
-    width: 100%;
-    justify-content: center;
-    margin-top: auto;
   }
 
   .tariff-card--featured {
@@ -792,145 +463,128 @@
     box-shadow: 0 0 0 1px var(--color-accent), 0 14px 36px -16px rgba(0,0,0,0.55);
   }
 
+  .tariff-badge {
+    position: absolute; top: 1rem; right: 1rem;
+    font-family: var(--font-mono); font-size: 0.7rem; font-weight: 600;
+    padding: 0.25rem 0.6rem; border-radius: 100px;
+    background: color-mix(in srgb, var(--color-accent) 15%, transparent);
+    color: var(--color-accent); border: 1px solid color-mix(in srgb, var(--color-accent) 25%, transparent);
+  }
+  .tariff-badge--hot {
+    background: color-mix(in srgb, #ff6b6b 15%, transparent);
+    color: #ff6b6b; border-color: color-mix(in srgb, #ff6b6b 25%, transparent);
+  }
+  .tariff-badge--free {
+    background: color-mix(in srgb, var(--color-accent-2) 15%, transparent);
+    color: var(--color-accent-2); border-color: color-mix(in srgb, var(--color-accent-2) 25%, transparent);
+  }
+
+  .tariff-card-header { margin-bottom: 1.25rem; position: relative; z-index: 1; display: flex; align-items: flex-start; gap: 0.75rem; }
+  .tariff-card-header-icon { font-size: 1.25rem; margin-top: 0.1rem; }
+
+  .tariff-name { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.15rem; }
+  .tariff-desc { font-size: 0.85rem; color: var(--color-fg-dim); }
+
+  .tariff-price {
+    font-family: var(--font-mono); font-size: 2rem; font-weight: 700;
+    color: var(--color-accent); margin-bottom: 0.25rem;
+    position: relative; z-index: 1;
+  }
+  .tariff-price--small { font-size: 1.3rem; }
+  .tariff-price-sub {
+    font-size: 0.8rem; color: var(--color-fg-dim);
+    font-family: var(--font-sans); font-weight: 400;
+  }
+  .tariff-price-old {
+    font-size: 1rem; color: var(--color-fg-dim);
+    text-decoration: line-through; opacity: 0.5;
+    font-family: var(--font-mono);
+  }
+
+  .tariff-features { list-style: none; margin: 1.25rem 0; flex: 1; position: relative; z-index: 1; }
+  .tariff-features li {
+    font-size: 0.9rem; padding: 0.4rem 0;
+    color: var(--color-fg-dim); display: flex; align-items: flex-start; gap: 0.5rem;
+  }
+  .tariff-features li::before { content: '→'; color: var(--color-accent); font-weight: 600; flex-shrink: 0; }
+
+  .tariff-card .btn { position: relative; z-index: 1; width: 100%; justify-content: center; margin-top: auto; }
+
+  .carousel-nav { display: flex; gap: 0.75rem; justify-content: center; margin-top: 1.25rem; }
+  .carousel-btn {
+    display: flex; align-items: center; justify-content: center;
+    width: 2.75rem; height: 2.75rem; border-radius: 50%;
+    background: var(--color-surface); border: 1.5px solid var(--color-border);
+    color: var(--color-fg); cursor: pointer; font-size: 1.25rem;
+    transition: all 0.2s; box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  }
+  .carousel-btn:hover {
+    background: var(--color-surface-2); border-color: var(--color-accent);
+    color: var(--color-accent); transform: scale(1.05);
+  }
+
   /* === SUMMER BANNER === */
   .summer-banner {
     background: linear-gradient(135deg, color-mix(in srgb, var(--color-accent) 8%, transparent), color-mix(in srgb, var(--color-accent-2) 8%, transparent));
     border: 1px solid color-mix(in srgb, var(--color-accent) 20%, var(--color-border));
-    border-radius: var(--radius-lg);
-    padding: 2.5rem 3rem;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    gap: 1.5rem;
-    position: relative;
-    overflow: hidden;
+    border-radius: var(--radius-lg); padding: 2.5rem 3rem;
+    display: flex; flex-wrap: wrap; align-items: center;
+    justify-content: space-between; gap: 1.5rem;
+    position: relative; overflow: hidden;
   }
   .summer-banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
+    content: ''; position: absolute; inset: 0;
     background: radial-gradient(600px circle at 70% 50%, color-mix(in srgb, var(--color-accent) 16%, transparent), transparent 60%);
     pointer-events: none;
   }
-  .summer-banner-content {
-    position: relative;
-    z-index: 1;
-  }
-  .summer-banner h3 {
-    font-size: 1.35rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-  }
-  .summer-banner p {
-    color: var(--color-fg-dim);
-    font-size: 0.95rem;
-  }
-  .summer-banner .btn {
-    flex-shrink: 0;
-    position: relative;
-    z-index: 1;
-  }
-  .summer-price {
-    font-size: 2rem;
-    font-weight: 700;
-    font-family: var(--font-mono);
-    color: var(--color-accent);
-    display: block;
-  }
+  .summer-banner-content { position: relative; z-index: 1; }
+  .summer-banner h3 { font-size: 1.35rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .summer-banner p { color: var(--color-fg-dim); font-size: 0.95rem; }
+  .summer-banner .btn { flex-shrink: 0; position: relative; z-index: 1; }
+  .summer-price { font-size: 2rem; font-weight: 700; font-family: var(--font-mono); color: var(--color-accent); display: block; }
 
   /* === STEPS === */
-  .steps-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-  }
+  .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
   .step-card {
-    background: var(--color-surface);
-    border: 1px solid var(--color-border);
-    border-radius: var(--radius-lg);
-    padding: 2rem;
-    text-align: center;
+    background: var(--color-surface); border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg); padding: 2rem; text-align: center;
     transition: transform 0.35s var(--ease-smooth), border-color 0.3s;
   }
-  .step-card:hover {
-    transform: translateY(-3px);
-    border-color: var(--color-accent);
-  }
+  .step-card:hover { transform: translateY(-3px); border-color: var(--color-accent); }
   .step-number {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 3rem;
-    height: 3rem;
-    border-radius: 50%;
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 3rem; height: 3rem; border-radius: 50%;
     background: color-mix(in srgb, var(--color-accent) 12%, transparent);
-    color: var(--color-accent);
-    font-family: var(--font-mono);
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin-bottom: 1rem;
+    color: var(--color-accent); font-family: var(--font-mono);
+    font-size: 1.25rem; font-weight: 700; margin-bottom: 1rem;
   }
-  .step-card h4 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.5rem;
-  }
-  .step-card p {
-    font-size: 0.9rem;
-    color: var(--color-fg-dim);
-  }
+  .step-card h4 { font-size: 1.1rem; font-weight: 600; margin-bottom: 0.5rem; }
+  .step-card p { font-size: 0.9rem; color: var(--color-fg-dim); }
 
   /* === FOOTER === */
   .site-footer {
-    position: relative;
-    z-index: 2;
+    position: relative; z-index: 2;
     border-top: 1px solid var(--color-border);
     background: linear-gradient(180deg, transparent, color-mix(in srgb, var(--color-void-deep) 80%, transparent));
     padding: 3rem 0 2rem;
   }
-  .footer-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1.5rem;
-  }
+  .footer-grid { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 1.5rem; }
   .footer-brand .site-logo { font-size: 1rem; }
-  .footer-tagline {
-    font-size: 0.8rem;
-    color: var(--color-fg-dim);
-    margin-top: 0.25rem;
-  }
-  .footer-links {
-    display: flex;
-    gap: 1.25rem;
-    flex-wrap: wrap;
-  }
-  .footer-links a {
-    font-size: 0.85rem;
-    color: var(--color-fg-dim);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
+  .footer-tagline { font-size: 0.8rem; color: var(--color-fg-dim); margin-top: 0.25rem; }
+  .footer-links { display: flex; gap: 1.25rem; flex-wrap: wrap; }
+  .footer-links a { font-size: 0.85rem; color: var(--color-fg-dim); text-decoration: none; transition: color 0.2s; }
   .footer-links a:hover { color: var(--color-accent); }
   .footer-copy {
-    width: 100%;
-    text-align: center;
-    font-size: 0.75rem;
-    color: var(--color-fg-dim);
-    opacity: 0.6;
-    margin-top: 1.5rem;
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--color-border);
+    width: 100%; text-align: center; font-size: 0.75rem;
+    color: var(--color-fg-dim); opacity: 0.6;
+    margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border);
   }
 
   /* === RESPONSIVE === */
   @media (max-width: 1024px) {
-    .tariffs-carousel .tariff-card {
-      flex: 0 0 calc(50% - 0.625rem);
-      min-width: 300px;
-    }
+    .tariffs-carousel .tariff-card { flex: 0 0 calc(50% - 0.625rem); min-width: 300px; }
+    .audience-grid { grid-template-columns: 1fr 1fr; }
+    .problems-grid { grid-template-columns: repeat(3, 1fr); }
   }
 
   @media (max-width: 768px) {
@@ -943,61 +597,41 @@
     .btn-group { flex-direction: column; }
     .btn-group .btn { width: 100%; justify-content: center; }
 
-    .about-grid {
-      grid-template-columns: 1fr;
-      text-align: center;
-    }
+    .audience-grid { grid-template-columns: 1fr; }
+    .problems-grid { grid-template-columns: 1fr; }
+    .community-grid { grid-template-columns: 1fr; }
+
+    .about-grid { grid-template-columns: 1fr; text-align: center; }
     .about-avatar { margin: 0 auto; }
     .section-title::after { margin-left: auto; margin-right: auto; }
     .section-subtitle { margin-left: auto; margin-right: auto; }
     .about-text p { font-size: 0.95rem; }
+    .about-values-grid { grid-template-columns: 1fr; text-align: left; }
+    .about-benefits-grid { grid-template-columns: 1fr; }
 
-    .about-values-grid {
-      grid-template-columns: 1fr;
-    }
-    .about-benefits-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .problems-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .tariffs-carousel .tariff-card {
-      flex: 0 0 85%;
-      min-width: 280px;
-    }
+    .tariffs-carousel .tariff-card { flex: 0 0 85%; min-width: 280px; }
     .tariff-card { padding: 1.5rem; }
 
-    .summer-banner {
-      padding: 1.5rem;
-      text-align: center;
-      justify-content: center;
-    }
+    .summer-banner { padding: 1.5rem; text-align: center; justify-content: center; }
     .summer-banner .btn { width: 100%; }
 
-    .steps-grid {
-      grid-template-columns: 1fr;
-    }
-
+    .steps-grid { grid-template-columns: 1fr; }
     .section { padding: 3rem 0; }
     .section-title { font-size: 1.5rem; }
   }
 
   @media (max-width: 480px) {
-    .tariffs-carousel .tariff-card {
-      flex: 0 0 82%;
-      min-width: 260px;
-    }
+    .tariffs-carousel .tariff-card { flex: 0 0 82%; min-width: 260px; }
     .tariff-features li { font-size: 0.85rem; }
     .hero h1 { font-size: clamp(1.35rem, 6vw, 1.75rem); }
   }
 
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1 !important; filter: blur(0) !important; transform: translateY(0) !important; }
-    .tariff-card:hover { transform: none; }
-    .step-card:hover { transform: none; }
-    .btn:hover { transform: none; }
+    .tariff-card:hover, .step-card:hover, .btn:hover,
+    .audience-card:hover, .problem-card:hover,
+    .community-card:hover, .about-value-card:hover,
+    .about-benefit-card:hover { transform: none; }
     .section-title::after { animation: none !important; }
     #plexus-canvas { display: none; }
   }
@@ -1030,13 +664,13 @@
 <!-- Header -->
 <header class="site-header" role="banner">
   <div class="container">
-    <a href="#" class="site-logo"><span>✦</span> Химия без духоты</a>
+    <a href="#" class="site-logo"><span>✦</span> IlyaBR</a>
 
     <nav class="nav-desktop" role="navigation" aria-label="Основная навигация">
+      <a href="#community">Сообщество</a>
+      <a href="#tariffs-ege">Курсы</a>
       <a href="#about">Обо мне</a>
-      <a href="#tariffs-ege">ЕГЭ</a>
-      <a href="#tariffs-oge">ОГЭ</a>
-      <a href="#how-to-start">Как начать</a>
+      <a href="#cta">Начать</a>
     </nav>
 
     <div class="header-actions">
@@ -1052,11 +686,10 @@
 
 <!-- Mobile Nav -->
 <nav class="mobile-nav" id="mobileNav" role="navigation" aria-label="Мобильная навигация">
+  <a href="#community" onclick="closeMobileNav()">Сообщество</a>
+  <a href="#tariffs-ege" onclick="closeMobileNav()">Курсы</a>
   <a href="#about" onclick="closeMobileNav()">Обо мне</a>
-  <a href="#tariffs-ege" onclick="closeMobileNav()">Тарифы ЕГЭ</a>
-  <a href="#tariffs-oge" onclick="closeMobileNav()">Тарифы ОГЭ</a>
-  <a href="#how-to-start" onclick="closeMobileNav()">Как начать</a>
-  <a href="#summer" onclick="closeMobileNav()">Летний курс</a>
+  <a href="#cta" onclick="closeMobileNav()">Начать</a>
 </nav>
 
 <!-- Hero -->
@@ -1066,23 +699,56 @@
       <p class="hero-tagline reveal">🧪 Студент-медик · Репетитор по химии</p>
       <h1 class="reveal" style="transition-delay:100ms">
         Химия <span class="highlight">без духоты</span>.<br>
-        От студента-медика,<br>
-        который сам вывез ЕГЭ с нуля
+        Вытянем с любого уровня.
       </h1>
       <p class="reveal" style="transition-delay:200ms">
-        Привет, я Илья. Студент-медик, сам подготовился с нуля и поступил.
-        В 11 классе вообще не шарил за химию, а начал готовиться «чисто по приколу».
+        Я Илья, студент-медик. Подготовился с нуля и поступил. 
+        Помогаю тем, кто завалил пробники, ничего не понимает в органике 
+        и не знает с чего начать.
       </p>
       <p class="reveal" style="transition-delay:250ms">
-        Никакой воды. Только рабочие схемы и лайфхаки, которые реально работают.
+        А ещё веду <strong class="text-accent">бесплатное сообщество</strong> с гайдами, 
+        разборами и поддержкой — чтобы ты не был один.
       </p>
       <div class="btn-group reveal" style="transition-delay:300ms">
-        <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank">
-          Записаться на пробное 🎯
+        <a href="#community" class="btn btn-primary">
+          Вступить в сообщество 🎯
         </a>
-        <a href="https://t.me/твой_юзернейм" class="btn btn-secondary" target="_blank">
-          Написать в Telegram ✦
+        <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-secondary" target="_blank">
+          Записаться на пробное
         </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Audience -->
+<section class="section" id="audience">
+  <div class="container">
+    <span class="section-label reveal">Для кого</span>
+    <h2 class="section-title reveal" style="transition-delay:50ms">Это про тебя?</h2>
+    <p class="section-subtitle reveal" style="transition-delay:100ms">
+      Две разные ситуации. Один выход.
+    </p>
+
+    <div class="audience-grid">
+      <div class="audience-card reveal" style="transition-delay:100ms">
+        <div class="audience-emoji">😬</div>
+        <h3>Всё завалил, ничего не успеваешь</h3>
+        <p>
+          Пробники на 20 баллов, химия — тёмный лес, до экзамена 
+          ничего, а руки уже опустились. Не повод сдаваться. 
+          Я вытаскивал людей с полного нуля — вытащим и тебя.
+        </p>
+      </div>
+      <div class="audience-card reveal" style="transition-delay:150ms">
+        <div class="audience-emoji">🚀</div>
+        <h3>Уже целишься выше, хочешь максимум</h3>
+        <p>
+          Учишься в школе, но уже планируешь больше. Хочешь 
+          не просто сдать, а получить результат, прокачать 
+          продуктивность и окружить себя теми, кто тоже растёт.
+        </p>
       </div>
     </div>
   </div>
@@ -1093,39 +759,94 @@
   <div class="container">
     <span class="section-label reveal">Знакомо?</span>
     <h2 class="section-title reveal" style="transition-delay:50ms">Я знаю, с чем ты сталкиваешься</h2>
-    <p class="section-subtitle reveal" style="transition-delay:100ms">Бывает полная безнадёга? Я знаю как из неё выходить</p>
+    <p class="section-subtitle reveal" style="transition-delay:100ms">И знаю как из этого выходить</p>
 
     <div class="problems-grid">
       <div class="problem-card reveal" style="transition-delay:100ms">
         <div class="problem-question">❓ «В химии полный ноль — даже пробник написать не могу»</div>
         <div class="problem-arrow">→</div>
-        <div class="problem-answer">Вытянем с любого уровня. Начнём с самых основ и дойдём до результата. Я сам начинал с нуля.</div>
+        <div class="problem-answer">Вытянем с любого уровня. Начнём с самых основ и дойдём до результата.</div>
       </div>
       <div class="problem-card reveal" style="transition-delay:150ms">
         <div class="problem-question">❓ «Пробники на 20–30 баллов, кажется это потолок»</div>
         <div class="problem-arrow">→</div>
-        <div class="problem-answer">Это не потолок. Разберём каждую ошибку, закроем пробелы, которые тянут вниз. Баллы пойдут вверх.</div>
+        <div class="problem-answer">Это не потолок. Разберём ошибки, закроем пробелы — баллы пойдут вверх.</div>
       </div>
       <div class="problem-card reveal" style="transition-delay:200ms">
-        <div class="problem-question">❓ «Органика и вторая часть — для меня тёмный лес»</div>
+        <div class="problem-question">❓ «До экзамена почти ничего, а знаний нет»</div>
         <div class="problem-arrow">→</div>
-        <div class="problem-answer">Разложим на элементарные шаги. Цепочки и задачи на растворы станут понятной логикой без страха.</div>
+        <div class="problem-answer">Фокус на темах, которые принесут баллы. Без воды. Полгода хватило мне — хватит и тебе.</div>
       </div>
       <div class="problem-card reveal" style="transition-delay:250ms">
-        <div class="problem-question">❓ «До экзамена почти ничего, а я ничего не знаю»</div>
+        <div class="problem-question">❓ «Органика и вторая часть — тёмный лес»</div>
         <div class="problem-arrow">→</div>
-        <div class="problem-answer">Фокус только на темах, которые принесут баллы. Без воды. Полгода хватило мне — хватит и тебе.</div>
+        <div class="problem-answer">Разложим на элементарные шаги. Цепочки и задачи станут понятной логикой.</div>
       </div>
       <div class="problem-card reveal" style="transition-delay:300ms">
-        <div class="problem-question">❓ «Опускаются руки, не знаю с чего начать»</div>
+        <div class="problem-question">❓ «Школа не даёт базы, а репетитор дорого»</div>
         <div class="problem-arrow">→</div>
-        <div class="problem-answer">Бесплатное пробное 45 мин — определим уровень и составим план. А дальше я веду тебя 24/7 до результата.</div>
+        <div class="problem-answer">Закроем пробелы по цене ниже среднего, но с полным сопровождением 24/7.</div>
       </div>
       <div class="problem-card reveal" style="transition-delay:350ms">
-        <div class="problem-question">❓ «В школе химию не дают, а на репетитора денег нет»</div>
+        <div class="problem-question">❓ «Опускаются руки, не знаю с чего начать»</div>
         <div class="problem-arrow">→</div>
-        <div class="problem-answer">Закроем все пробелы с нуля. По цене ниже среднего репетитора, но с полным сопровождением и поддержкой 24/7.</div>
+        <div class="problem-answer">Приходи на бесплатное пробное. Определим уровень, составим план, а дальше я рядом.</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- Community -->
+<section class="section" id="community">
+  <div class="container">
+    <span class="section-label reveal" style="color:var(--color-accent-2)">Сообщество</span>
+    <h2 class="section-title reveal" style="transition-delay:50ms">🧬 Что внутри сообщества</h2>
+    <p class="section-subtitle reveal" style="transition-delay:100ms">
+      Бесплатный Telegram-чат, где я делюсь материалами, гайдами и помогаю лично.
+      Вступай — и готовься к ЕГЭ без духоты, в кругу своих.
+    </p>
+
+    <div class="community-grid">
+      <div class="community-card reveal" style="transition-delay:100ms">
+        <div class="community-icon">🧠</div>
+        <h4>Мышление и продуктивность</h4>
+        <ul>
+          <li>Тайм-менеджмент для учёбы</li>
+          <li>Как не терять мотивацию</li>
+          <li>Прокачка памяти и внимания</li>
+          <li>Работа с блокнотом и целями</li>
+          <li>Обучение в 21 веке</li>
+        </ul>
+      </div>
+      <div class="community-card reveal" style="transition-delay:150ms">
+        <div class="community-icon">📚</div>
+        <h4>Подготовка к ЕГЭ/ОГЭ</h4>
+        <ul>
+          <li>Разборы заданий и лайфхаки</li>
+          <li>Гайды по органике и неорганике</li>
+          <li>Алгоритмы для расчётных задач</li>
+          <li>Памятки и шпаргалки</li>
+          <li>Механики эффективной подготовки</li>
+        </ul>
+      </div>
+      <div class="community-card reveal" style="transition-delay:200ms">
+        <div class="community-icon">🤝</div>
+        <h4>Поддержка и нетворкинг</h4>
+        <ul>
+          <li>Помощь друг другу в сложных темах</li>
+          <li>Я лично отвечаю на вопросы</li>
+          <li>Атмосфера без осуждения</li>
+          <li>Люди с одной целью — сдать и поступить</li>
+          <li>Work-life balance без выгорания</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="community-cta reveal">
+      <p>Всё это совершенно бесплатно. Просто вступи.</p>
+      <a href="https://t.me/твой_юзернейм" class="btn btn-primary" target="_blank">
+        Вступить в сообщество ✦
+      </a>
     </div>
   </div>
 </section>
@@ -1140,58 +861,44 @@
         </div>
       </div>
       <div class="about-text">
-        <span class="section-label reveal">Обо мне</span>
-        <h3 class="reveal" style="transition-delay:100ms">Студент-медик, который сам прошёл этот путь</h3>
+        <span class="section-label reveal">Кто я</span>
+        <h3 class="reveal" style="transition-delay:100ms">Студент-медик, который постоянно растёт и помогает другим</h3>
         <p class="reveal" style="transition-delay:150ms">
-          Я студент-медик, сам подготовился за полгода с нуля и поступил.
+          Меня зовут <strong>Илья</strong>, я учусь в медицинском. 
+          Параллельно с учёбой постоянно изучаю новое — выходя далеко 
+          за рамки программы. Всё, до чего могу дотянуться: химия, 
+          продуктивность, личный бренд, психология.
+        </p>
+        <p class="reveal" style="transition-delay:175ms">
+          Я глубоко убеждён: лучший способ закрепить знания — 
+          передать их другим. Поэтому я помогаю ребятам 
+          <strong>поступить в мед</strong> и разобраться в химии. 
+          Я знаю, как это тяжело, когда вокруг бардак, а дедлайны 
+          горят — и знаю, как из этого выбираться.
+        </p>
+        <p class="reveal" style="transition-delay:200ms">
+          Моя главная ценность — <strong>work-life balance</strong> 
+          при нормальном уровне жизни. В своих каналах и на занятиях 
+          я учу не впахивать до выгорания, а работать спокойно, 
+          отдыхать осознанно и получать максимальные бенефиты 
+          от каждого часа подготовки.
         </p>
 
-        <div class="reveal" style="transition-delay:200ms">
-          <p style="margin-top:1rem;font-size:1rem;font-weight:600;color:var(--color-fg)">🎯 Я помогаю с тем, что важно</p>
-        </div>
-
-        <div class="about-values-grid">
-          <div class="about-value-card reveal" style="transition-delay:200ms">
-            <div class="about-value-num">1</div>
-            <h4>Понять логику, а не зубрить</h4>
-            <p>Даю алгоритмы и лайфхаки для решения задач. Учимся думать как составители экзамена.</p>
-          </div>
-          <div class="about-value-card reveal" style="transition-delay:250ms">
-            <div class="about-value-num">2</div>
-            <h4>Закрыть пробелы, даже если поздно</h4>
-            <p>Старт в 10–11 классе? Фокусируемся на темах, которые принесут баллы на твоём уровне.</p>
-          </div>
-          <div class="about-value-card reveal" style="transition-delay:300ms">
-            <div class="about-value-num">3</div>
-            <h4>Органика без страха</h4>
-            <p>Сложные цепочки и задачи — на простые шаги. То что кажется адом становится логикой.</p>
-          </div>
-          <div class="about-value-card reveal" style="transition-delay:350ms">
-            <div class="about-value-num">4</div>
-            <h4>Видеть реальный прогресс</h4>
-            <p>Пробники, честный разбор ошибок, коррекция плана. Всегда знаешь где ты и что делать.</p>
-          </div>
-        </div>
-
-        <div class="reveal" style="transition-delay:400ms">
-          <p style="margin-top:1.5rem;font-size:1rem;font-weight:600;color:var(--color-fg)">💡 Что ты получаешь кроме уроков</p>
-        </div>
-
-        <div class="about-benefits-grid">
-          <div class="about-benefit-card reveal" style="transition-delay:400ms">
+        <div class="about-benefits-grid reveal" style="transition-delay:250ms">
+          <div class="about-benefit-card">
             <div class="about-benefit-icon">🎯</div>
             <h4>Честность</h4>
-            <p>На первой встрече скажу реальный уровень и сроки. Без впаривания лишнего.</p>
+            <p>Скажу реальный уровень и сроки. Без впаривания лишнего.</p>
           </div>
-          <div class="about-benefit-card reveal" style="transition-delay:450ms">
+          <div class="about-benefit-card">
             <div class="about-benefit-icon">💬</div>
             <h4>Поддержка 24/7</h4>
-            <p>Застрял в 22:00? Напиши в Telegram. Ты платишь за результат, не за час.</p>
+            <p>Пиши в любое время. Я на связи.</p>
           </div>
-          <div class="about-benefit-card reveal" style="transition-delay:500ms">
+          <div class="about-benefit-card">
             <div class="about-benefit-icon">📁</div>
-            <h4>Материалы под рукой</h4>
-            <p>Теория, шпаргалки, записи на Яндекс Диске. Пропустил — пересмотришь.</p>
+            <h4>Материалы на диске</h4>
+            <p>Теория, шпаргалки, записи — всё под рукой.</p>
           </div>
         </div>
       </div>
@@ -1202,61 +909,53 @@
 <!-- Tariffs EGE -->
 <section class="section" id="tariffs-ege">
   <div class="container">
-    <span class="section-label reveal">Подготовка к ЕГЭ</span>
-    <h2 class="section-title reveal" style="transition-delay:50ms">🧬 Вытянем с любого уровня</h2>
-    <p class="section-subtitle reveal" style="transition-delay:100ms">3 формата — выбирай под свой старт</p>
+    <span class="section-label reveal">Курсы</span>
+    <h2 class="section-title reveal" style="transition-delay:50ms">🧪 Индивидуальная подготовка к ЕГЭ</h2>
+    <p class="section-subtitle reveal" style="transition-delay:100ms">Занятия по 2 часа. В удобном темпе, с полной поддержкой.</p>
 
     <div class="tariffs-carousel" id="egeCarousel">
-      <!-- Базовый -->
-      <div class="tariff-card reveal tariff-card--compact" style="transition-delay:100ms">
+      <div class="tariff-card reveal" style="transition-delay:100ms">
         <span class="tariff-badge">Набор открыт</span>
         <div class="tariff-card-header">
-          <div class="tariff-name">🟢 Базовый</div>
-          <div class="tariff-desc">Сдать без паники — с любого нуля</div>
+          <div class="tariff-card-header-icon">🔥</div>
+          <div>
+            <div class="tariff-name">Разовое занятие</div>
+            <div class="tariff-desc">Оплата после каждого урока</div>
+          </div>
         </div>
-        <div class="tariff-price">6 000 ₽ <span class="tariff-price-sub">/ мес — 1 инд./нед</span></div>
-        <div class="tariff-price">12 000 ₽ <span class="tariff-price-sub">/ мес — 2 инд./нед</span></div>
+        <div class="tariff-price">2 000 ₽ <span class="tariff-price-sub">/ 2 часа</span></div>
         <ul class="tariff-features">
-          <li>Стартуем с азов, даже если не помнишь таблицу</li>
-          <li>Только то, что реально нужно для сдачи</li>
-          <li>Плотно идём к результату без воды</li>
+          <li>Индивидуально, тет-а-тет</li>
+          <li>Программа под твой уровень</li>
+          <li>Разбор твоих ошибок и пробелов</li>
+          <li>Лайфхаки и алгоритмы для каждой темы</li>
+          <li>Никаких обязательств — платишь за урок</li>
         </ul>
-        <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank">Выбрать тариф</a>
+        <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank">Записаться</a>
       </div>
 
-      <!-- Смешарик (featured) -->
       <div class="tariff-card tariff-card--featured reveal" style="transition-delay:150ms">
-        <span class="tariff-badge">🔥 Самый популярный</span>
+        <span class="tariff-badge">🔥 Выгодно</span>
         <div class="tariff-card-header">
-          <div class="tariff-name">🟡 Смешарик</div>
-          <div class="tariff-desc">Системная подготовка для твёрдых баллов</div>
+          <div class="tariff-card-header-icon">📦</div>
+          <div>
+            <div class="tariff-name">Абонемент на месяц</div>
+            <div class="tariff-desc">2 занятия в неделю — 8 занятий</div>
+          </div>
         </div>
-        <div class="tariff-price">16 000 ₽ <span class="tariff-price-sub">/ мес</span></div>
+        <div class="tariff-price">12 000 ₽ <span class="tariff-price-sub">/ мес</span></div>
+        <div class="tariff-price" style="font-size:0.95rem;margin-top:0.25rem">
+          <span class="tariff-price-old">16 000 ₽</span>
+          <span class="tariff-price-sub" style="font-weight:600;color:var(--color-accent-2)"> 1 500 ₽ за занятие</span>
+        </div>
         <ul class="tariff-features">
-          <li><strong>3 занятия/нед:</strong> 1 групповое (теория) + 2 индивид. (отработка)</li>
-          <li>Раз в 2 месяца — пробник с разбором</li>
+          <li>Системная подготовка 2 раза в неделю</li>
+          <li>Полная персонализация программы</li>
           <li><strong>Поддержка 24/7</strong> в Telegram</li>
-          <li>Разбираем пробелы и закрываем их точечно</li>
+          <li>Пробник каждый месяц с разбором</li>
+          <li>Экономия 4 000 ₽ против разовых занятий</li>
         </ul>
-        <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank">Выбрать тариф</a>
-      </div>
-
-      <!-- Гигачад -->
-      <div class="tariff-card reveal" style="transition-delay:200ms">
-        <span class="tariff-badge tariff-badge--hot">Осталось 3 места</span>
-        <div class="tariff-card-header">
-          <div class="tariff-name">🔴 Гигачад</div>
-          <div class="tariff-desc">Хардкор до результата. Цель — топ-мед</div>
-        </div>
-        <div class="tariff-price">18 000 ₽ <span class="tariff-price-sub">/ мес</span></div>
-        <ul class="tariff-features">
-          <li><strong>3 индивид./нед</strong> — только тет-а-тет</li>
-          <li>Полная персонализация под твой уровень</li>
-          <li>Каждый месяц — жёсткий пробник с разбором</li>
-          <li><strong>Поддержка 24/7</strong></li>
-          <li><strong>Опция PRO (+2 000 ₽/мес):</strong> пробники в симуляционных центрах с бланками и таймингом</li>
-        </ul>
-        <a href="https://calendar.app/google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank">Выбрать тариф</a>
+        <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank">Выбрать абонемент</a>
       </div>
     </div>
     <div class="carousel-nav" id="egeCarouselNav">
@@ -1271,31 +970,35 @@
   <div class="container">
     <span class="section-label reveal">Подготовка к ОГЭ</span>
     <h2 class="section-title reveal" style="transition-delay:50ms">🧫 Тарифы на ОГЭ</h2>
-    <p class="section-subtitle reveal" style="transition-delay:100ms">Разберёмся с основами и заложим базу без стресса</p>
+    <p class="section-subtitle reveal" style="transition-delay:100ms">Цена за занятие. Оплата после каждого урока.</p>
 
     <div class="tariffs-carousel" id="ogeCarousel">
-      <!-- Групповое -->
       <div class="tariff-card reveal" style="transition-delay:100ms">
         <span class="tariff-badge">Набор открыт</span>
         <div class="tariff-card-header">
-          <div class="tariff-name">🟢 В группе</div>
-          <div class="tariff-desc">Занятия в мини-группе до 4 человек</div>
+          <div class="tariff-card-header-icon">👥</div>
+          <div>
+            <div class="tariff-name">В группе</div>
+            <div class="tariff-desc">Мини-группа до 4 человек</div>
+          </div>
         </div>
         <div class="tariff-price">1 000 ₽ <span class="tariff-price-sub">/ занятие</span></div>
         <ul class="tariff-features">
-          <li>Спокойно разбираем программу</li>
-          <li>Уверенная сдача экзамена</li>
+          <li>Разбираем программу без стресса</li>
+          <li>Поддержка друг друга внутри группы</li>
           <li>База для 10 класса или колледжа</li>
         </ul>
-        <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank">Выбрать тариф</a>
+        <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank">Выбрать</a>
       </div>
 
-      <!-- Индивидуальное -->
       <div class="tariff-card reveal" style="transition-delay:150ms">
         <span class="tariff-badge">🔥 Максимум внимания</span>
         <div class="tariff-card-header">
-          <div class="tariff-name">🟡 Индивидуально</div>
-          <div class="tariff-desc">Личный план под твой уровень</div>
+          <div class="tariff-card-header-icon">🎯</div>
+          <div>
+            <div class="tariff-name">Индивидуально</div>
+            <div class="tariff-desc">Личный план под твой уровень</div>
+          </div>
         </div>
         <div class="tariff-price">1 500 ₽ <span class="tariff-price-sub">/ занятие</span></div>
         <ul class="tariff-features">
@@ -1303,7 +1006,7 @@
           <li>Поддержка в Telegram между занятиями</li>
           <li>Программа под твои пробелы</li>
         </ul>
-        <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank">Выбрать тариф</a>
+        <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank">Выбрать</a>
       </div>
     </div>
     <div class="carousel-nav" id="ogeCarouselNav">
@@ -1318,7 +1021,7 @@
   <div class="container">
     <div class="summer-banner reveal">
       <div class="summer-banner-content">
-        <span class="tariff-badge tariff-badge--summer" style="position:static;display:inline-block;margin-bottom:0.75rem">☀️ Летний набор открыт</span>
+        <span class="tariff-badge tariff-badge--free" style="position:static;display:inline-block;margin-bottom:0.75rem">☀️ Летний набор открыт</span>
         <h3>Летний курс — готовься к ЕГЭ/ОГЭ заранее</h3>
         <p>
           2 индивидуальных занятия в неделю. Удобный формат для лета —
@@ -1332,38 +1035,42 @@
   </div>
 </section>
 
-<!-- How to start -->
-<section class="section" id="how-to-start">
+<!-- CTA -->
+<section class="section" id="cta">
   <div class="container">
-    <span class="section-label reveal">Начать занятия</span>
-    <h2 class="section-title reveal" style="transition-delay:50ms">Как начать</h2>
-    <p class="section-subtitle reveal" style="transition-delay:100ms">Всё просто — 3 шага</p>
+    <span class="section-label reveal">Готов начать?</span>
+    <h2 class="section-title reveal" style="transition-delay:50ms">Выбирай свой вход</h2>
+    <p class="section-subtitle reveal" style="transition-delay:100ms">
+      Бесплатно или с поддержкой — решать тебе.
+    </p>
 
     <div class="steps-grid">
       <div class="step-card reveal" style="transition-delay:100ms">
-        <div class="step-number">1</div>
-        <h4>Напиши мне</h4>
-        <p>Пиши в Telegram — расскажу про форматы, отвечу на вопросы, подберём время</p>
+        <div class="step-number">💬</div>
+        <h4>Вступить в сообщество</h4>
+        <p>Бесплатный Telegram-чат с гайдами, разборами и поддержкой. Всё, что нужно для самостоятельной подготовки.</p>
+        <div style="margin-top:1rem">
+          <a href="https://t.me/твой_юзернейм" class="btn btn-outline" target="_blank" style="width:100%;justify-content:center">Вступить ✦</a>
+        </div>
       </div>
-      <div class="step-card reveal" style="transition-delay:150ms">
-        <div class="step-number">2</div>
-        <h4>Бесплатное пробное</h4>
-        <p>45 минут решаем задачи, я смотрю твой уровень и честно говорю, какой тариф подойдёт</p>
-      </div>
-      <div class="step-card reveal" style="transition-delay:200ms">
-        <div class="step-number">3</div>
-        <h4>Оплата и старт</h4>
-        <p>Формирую чек на оплату услуг — и начинаем заниматься</p>
-      </div>
-    </div>
 
-    <div class="btn-group reveal" style="justify-content:center;margin-top:2.5rem;transition-delay:250ms">
-      <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank">
-        Записаться на пробное 🎯
-      </a>
-      <a href="https://t.me/твой_юзернейм" class="btn btn-secondary" target="_blank">
-        Написать в Telegram ✦
-      </a>
+      <div class="step-card reveal" style="transition-delay:150ms">
+        <div class="step-number">🎯</div>
+        <h4>Пробное занятие</h4>
+        <p>45 минут бесплатно. Решим задачи, я оценю твой уровень, скажу сколько нужно времени и какой формат подойдёт.</p>
+        <div style="margin-top:1rem">
+          <a href="https://calendar.app.google/QGaJEyfSh2c2ZPRt6" class="btn btn-primary" target="_blank" style="width:100%;justify-content:center">Записаться 🎯</a>
+        </div>
+      </div>
+
+      <div class="step-card reveal" style="transition-delay:200ms">
+        <div class="step-number">📦</div>
+        <h4>Абонемент на месяц</h4>
+        <p>Системные занятия 2 раза в неделю, полное сопровождение, пробники и экономия против разовых уроков.</p>
+        <div style="margin-top:1rem">
+          <a href="#tariffs-ege" class="btn btn-secondary" style="width:100%;justify-content:center">Выбрать абонемент</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -1373,8 +1080,8 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-brand">
-        <div class="site-logo"><span>✦</span> Химия без духоты</div>
-        <div class="footer-tagline">Подготовка к ЕГЭ/ОГЭ по химии · Студент-медик</div>
+        <div class="site-logo"><span>✦</span> IlyaBR</div>
+        <div class="footer-tagline">Химия без духоты · Студент-медик</div>
       </div>
       <div class="footer-links">
         <a href="https://t.me/твой_юзернейм" target="_blank">Telegram</a>
@@ -1382,7 +1089,7 @@
         <a href="#hero">Наверх</a>
       </div>
       <div class="footer-copy">
-        © 2026 Химия без духоты. ИП? — пока просто студент, который помогает сдать химию :)
+        © 2026 IlyaBR. Студент, который помогает сдать химию :)
       </div>
     </div>
   </div>
@@ -1467,7 +1174,7 @@
 
   /* ======================== SPOTLIGHT ======================== */
   (function initSpotlight() {
-    var cards = document.querySelectorAll('.tariff-card, .about-value-card, .problem-card');
+    var cards = document.querySelectorAll('.tariff-card, .about-value-card, .problem-card, .audience-card');
     cards.forEach(function(card) {
       card.addEventListener('mousemove', function(e) {
         var rect = card.getBoundingClientRect();
@@ -1593,7 +1300,6 @@
     var FRAME_INTERVAL = 33;
 
     function loop(time) {
-      if (!running) return;
       if (time - lastFrame < FRAME_INTERVAL) {
         requestAnimationFrame(loop);
         return;
@@ -1604,12 +1310,10 @@
 
       var w = canvas.width;
       var h = canvas.height;
-
       var isDark = document.documentElement.getAttribute('data-theme') !== 'light';
 
       for (var i = 0; i < particles.length; i++) {
         var p = particles[i];
-
         var dxHome = p.homeX - p.x;
         var dyHome = p.homeY - p.y;
         p.vx += dxHome * RESTORE_FORCE;
@@ -1643,12 +1347,7 @@
       }
 
       ctx.clearRect(0, 0, w, h);
-
-      if (isDark) {
-        ctx.globalCompositeOperation = 'lighter';
-      } else {
-        ctx.globalCompositeOperation = 'source-over';
-      }
+      ctx.globalCompositeOperation = isDark ? 'lighter' : 'source-over';
 
       for (var j = 0; j < particles.length; j++) {
         drawParticle(particles[j]);
@@ -1656,7 +1355,6 @@
       drawLines();
 
       ctx.globalCompositeOperation = 'source-over';
-
       requestAnimationFrame(loop);
     }
 
